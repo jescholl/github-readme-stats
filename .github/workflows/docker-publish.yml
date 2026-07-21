@@ -12,7 +12,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: jescholl/github-readme-stats
+  IMAGE_NAME: jescholl/readme-stats
 
 permissions:
   contents: write  # for creating tags
