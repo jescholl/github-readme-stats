@@ -2,21 +2,21 @@ name: Build and publish Docker image
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
     # Only tag + build when a change affects the built image. Pushes that touch
     # only docs or CI/workflow config are skipped (no new tag, no image).
     paths:
-      - '**'
-      - '!**.md'
-      - '!.github/**'
+      - "**"
+      - "!**.md"
+      - "!.github/**"
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: jescholl/readme-stats
 
 permissions:
-  contents: write  # for creating tags
-  packages: write  # for pushing to ghcr.io
+  contents: write # for creating tags
+  packages: write # for pushing to ghcr.io
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 0  # full history required for auto-tag
+          fetch-depth: 0 # full history required for auto-tag
 
       - name: Auto-tag
         id: autotag
