@@ -4,6 +4,8 @@ import repoCard from "./api/pin.js";
 import langCard from "./api/top-langs.js";
 import wakatimeCard from "./api/wakatime.js";
 import gistCard from "./api/gist.js";
+import upStatus from "./api/status/up.js";
+import patInfoStatus from "./api/status/pat-info.js";
 import express from "express";
 
 const app = express();
@@ -14,3 +16,5 @@ app.get("/pin", repoCard);
 app.get("/top-langs", langCard);
 app.get("/wakatime", wakatimeCard);
 app.get("/gist", gistCard);
+app.get("/api/status/up", upStatus);
+app.get("/api/status/pat-info", patInfoStatus);
